@@ -1,225 +1,33 @@
 <?php 
 
-//ini_set('memory_limit', '536870912');
+require("./vendor/autoload.php");
 
-
-/**
- * This include AddNewBooks.php file in this file.
- */
-require("./controller/classes/AddNewBooks.php");
-/**
- * This include AddNewLibrarian.php file in this file.
- */
-require("./controller/classes/AddNewLibrarian.php");
-/**
- * This include AddNewUser.php file in this file.
- */
-require("./controller/classes/AddNewUser.php");
-/**
- * This include Books.php file in this file.
- */
-require("./controller/classes/Books.php");
-/**
- * This include ExitPage.php file in this file.
- */
-require("./controller/classes/ExitPage.php");
-/**
- * This include Librarian.php file in this file.
- */
-require("./controller/classes/Librarian.php");
-/**
- * This include UserLogin.php file in this file.
- */
-require("./controller/classes/UserLogin.php");
-/**
- * This include LibrarianLogin.php file in this file.
- */
-require("./controller/classes/LibrarianLogin.php");
-/**
- * This include RemoveAccount.php file in this file.
- */
-require("./controller/classes/RemoveAccount.php");
-/**
- * This include RemoveBook.php file in this file.
- */
-require("./controller/classes/RemoveBook.php");
-/**
- * This include ShowAllBooks.php file in this file.
- */
-require("./controller/classes/ShowAllBooks.php");
-/**
- * This include UpdateAddress.php file in this file.
- */
-require("./controller/classes/UpdateAddress.php");
-/**
- * This include UpdateAge.php file in this file.
- */
-require("./controller/classes/UpdateAge.php");
-/**
- * This include UpdateBookAuthor.php file in this file.
- */
-require("./controller/classes/UpdateBookAuthor.php");
-/**
- * This include UpdateBookEdition.php file in this file.
- */
-require("./controller/classes/UpdateBookEdition.php");
-/**
- * This include UpdateBookName.php file in this file.
- */
-require("./controller/classes/UpdateBookName.php");
-/**
- * This include UpdateBookPublication.php file in this file.
- */
-require("./controller/classes/UpdateBookPublication.php");
-/**
- * This include UpdateBookQuantity.php file in this file.
- */
-require("./controller/classes/UpdateBookQuantity.php");
-/**
- * This include UpdateEmail.php file in this file.
- */
-require("./controller/classes/UpdateEmail.php");
-/**
- * This include UpdateName.php file in this file.
- */
-require("./controller/classes/UpdateName.php");
-/**
- * This include UpdatePhone.php file in this file.
- */
-require("./controller/classes/UpdatePhone.php");
-/**
- * This include User.php file in this file.
- */
-require("./controller/classes/User.php");
-/**
- * This include ViewProfile.php file in this file.
- */
-require("./controller/classes/ViewProfile.php");
-/**
- * This include HomeLibrary.php file in this file.
- */
-require("./View/HomeLibrary.php");
-/**
- * This include UpdateUserNameDao.php file in this file.
- */
-require("./model/classes/UpdateUserNameDao.php");
-/**
- * This include UpdateUserAddrDao.php file in this file.
- */
-require("./model/classes/UpdateUserAddrDao.php");
-/**
- * This include UpdateUserAgeDao.php file in this file.
- */
-require("./model/classes/UpdateUserAgeDao.php");
-/**
- * This include UpdateUserPhoDao.php file in this file.
- */
-require("./model/classes/UpdateUserPhoDao.php");
-/**
- * This include UpdateUserEmailDao.php file in this file.
- */
-require("./model/classes/UpdateUserEmailDao.php");
-/**
- * This include UpdateLibrarianNameDao.php file in this file.
- */
-require("./model/classes/UpdateLibrarianNameDao.php");
-/**
- * This include UpdateLibrarianAddrDao.php file in this file.
- */
-require("./model/classes/UpdateLibrarianAddrDao.php");
-/**
- * This include UpdateLibrarianAgeDao.php file in this file.
- */
-require("./model/classes/UpdateLibrarianAgeDao.php");
-/**
- * This include UpdateLibrarianPhoDao.php file in this file.
- */
-require("./model/classes/UpdateLibrarianPhoDao.php");
-/**
- * This include UpdateLibrarianEmailDao.php file in this file.
- */
-require("./model/classes/UpdateLibrarianEmailDao.php");
-/**
- * This include UpdateBookAuthorDao.php file in this file.
- */
-require("./model/classes/UpdateBookAuthorDao.php");
-/**
- * This include UpdateBookEditionDao.php file in this file.
- */
-require("./model/classes/UpdateBookEditionDao.php");
-/**
- * This include UpdateBookNameDao.php file in this file.
- */
-require("./model/classes/UpdateBookNameDao.php");
-/**
- * This include UpdateBookPublicationDao.php file in this file.
- */
-require("./model/classes/UpdateBookPublicationDao.php");
-/**
- * This include UpdateBookQuantityDao.php file in this file.
- */
-require("./model/classes/UpdateBookQuantityDao.php");
-/**
- * This include UserViewDao.php file in this file.
- */
-require("./model/classes/UserViewDao.php");
-/**
- * This include UserLoginDao.php file in this file.
- */
-require("./model/classes/UserLoginDao.php");
-/**
- * This include LibrarianLoginDao.php file in this file.
- */
-require("./model/classes/LibrarianLoginDao.php");
-/**
- * This include CreateBookDao.php file in this file.
- */
-require("./model/classes/CreateBookDao.php");
-/**
- * This include CreateLibrarianDao.php file in this file.
- */
-require("./model/classes/CreateLibrarianDao.php");
-/**
- * This include CreateUserDao.php file in this file.
- */
-require("./model/classes/CreateUserDao.php");
-/**
- * This include RemoveUserAccDao.php file in this file.
- */
-require("./model/classes/RemoveUserAccDao.php");
-/**
- * This include LibrarianViewDao.php file in this file.
- */
-require("./model/classes/LibrarianViewDao.php");
-/**
- * This include BorrowBook.php file in this file.
- */
-require("./controller/classes/BorrowBook.php");
-/**
- * This include BorrowBookDao.php file in this file.
- */
-require("./model/classes/BorrowBookDao.php");
-/**
- * This include ReturnBook.php file in this file.
- */
-require("./controller/classes/ReturnBook.php");
-/**
- * This include ReturnBookDao.php file in this file.
- */
-require("./model/classes/ReturnBookDao.php");
-/**
- * This include ShowBorrowedBooks.php file in this file.
- */
-require("./controller/classes/ShowBorrowedBooks.php");
-/**
- * This include ShowBorrowedBooksDao.php file in this file.
- */
-require("./model/classes/ShowBorredBooksDao.php");
-
-/**
- * This include ShowBorrowedBooksDao.php file in this file.
- */
-require("./controller/classes/UserObjectFactory.php");
+use Sonu\LibraryManagementSystem\Controller\classes\UserObjectFactory;
+use Sonu\LibraryManagementSystem\View\HomeLibrary;
+use Sonu\LibraryManagementSystem\Model\classes\CreateBookDao;
+use Sonu\LibraryManagementSystem\Controller\classes\ExitPage;
+use Sonu\LibraryManagementSystem\Controller\classes\AddNewBooks;
+use Sonu\LibraryManagementSystem\Controller\classes\BorrowBook;
+use Sonu\LibraryManagementSystem\Controller\classes\ReturnBook;
+use Sonu\LibraryManagementSystem\Controller\classes\AddNewLibrarian;
+use Sonu\LibraryManagementSystem\Controller\classes\AddNewUser;
+use Sonu\LibraryManagementSystem\Controller\classes\UserLogin;
+use Sonu\LibraryManagementSystem\Controller\classes\LibrarianLogin;
+use Sonu\LibraryManagementSystem\Controller\classes\RemoveAccount;
+use Sonu\LibraryManagementSystem\Controller\classes\RemoveBook;
+use Sonu\LibraryManagementSystem\Controller\classes\ShowAllBooks;
+use Sonu\LibraryManagementSystem\Controller\classes\ShowBorrowedBooks;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateAddress;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateAge;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateEmail;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateName;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdatePhone;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateBookAuthor;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateBookEdition;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateBookName;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateBookPublication;
+use Sonu\LibraryManagementSystem\Controller\classes\UpdateBookQuantity;
+use Sonu\LibraryManagementSystem\Controller\classes\ViewProfile;
 
 
 /**
