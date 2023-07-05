@@ -2,8 +2,8 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\LibrarianViewDao;
-use Sonu\LibraryManagementSystem\Model\classes\UserViewDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserDao;
+use Sonu\LibraryManagementSystem\Model\DAO\LibrarianDao;
 
 /**
  * This class has a functionality to view profile based on user type.
@@ -33,14 +33,14 @@ class ViewProfile{
         $this->user_type=$_SESSION['type'];
 
         if($this->user_type==='librarian'){
-            $this->profile_data=(new LibrarianViewDao)->viewProfile();
+            $this->profile_data=(new LibrarianDao)->viewProfile();
             if(isset($this->profile_data))
                 return $this->profile_data;
             else
                 return null;
         }
         else{
-            $this->profile_data=(new UserViewDao)->viewProfile();
+            $this->profile_data=(new UserDao)->viewProfile();
             if(isset($this->profile_data))
                 return $this->profile_data;
             else

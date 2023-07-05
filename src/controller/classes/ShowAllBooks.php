@@ -2,7 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UserViewDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserDao;
 
 /**
  * This class has a functionality to get array and return it to print.
@@ -15,6 +15,6 @@ class ShowAllBooks{
      * @return array
      */
     public function displayData():array{
-        return (new UserViewDao)->showAllBooks();
+        return (new UserDao)->showAllBooks();
     }
 }

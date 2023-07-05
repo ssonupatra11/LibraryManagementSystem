@@ -4,7 +4,7 @@ namespace Sonu\LibraryManagementSystem\Controller\classes;
 
 use Sonu\LibraryManagementSystem\Controller\classes\CheckEmailFormat;
 use Sonu\LibraryManagementSystem\Controller\classes\CheckPasswordFormat;
-use Sonu\LibraryManagementSystem\Model\classes\UserLoginDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserLoginDao;
 
 /**
  * This class has a functionality to take user input of user email and password to login.

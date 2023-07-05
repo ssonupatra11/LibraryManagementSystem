@@ -2,7 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UpdateBookQuantityDao;
+use Sonu\LibraryManagementSystem\Model\DAO\BookUpdateDao;
 
 /**
  * This class has a functionality to take user input of quantity to update it.
@@ -29,7 +29,7 @@ class UpdateBookQuantity{
         
         $this->book_id=(int)readline('Enter book id : ');
 
-        if((new UpdateBookQuantityDao)->updateBookQuantityDao($this->new_quantity,$this->book_id))
+        if(BookUpdateDao::updateBookQuantityDao($this->new_quantity,$this->book_id))
                 return true;
         return false;
     }

@@ -9,7 +9,12 @@ $_SESSION["name"]=null;
 $_SESSION["type"]=null;
 
 include_once("./src/controller/classes/DisplayBooksTraits.php");
+
+use PharIo\Manifest\Library;
 use Sonu\LibraryManagementSystem\Controller\classes\DisplayBooks;
+use Sonu\LibraryManagementSystem\Model\Data\AccountServices;
+use Sonu\LibraryManagementSystem\Model\Data\Librarian;
+use Sonu\LibraryManagementSystem\Model\Data\User;
 
 /**
  * This class has functionality to display library home page.
@@ -60,7 +65,7 @@ class HomeLibrary{
                     break;
                 }
                 case 2:{
-                    if($GLOBALS['new_user']->addAccount()){
+                    if((new AccountServices(new User()))->create()){
                         echo "User Added !",PHP_EOL;
                     }
                     else{
@@ -372,7 +377,7 @@ class HomeLibrary{
                     break;
                 }
                 case 16:{
-                    if($GLOBALS['new_librarian']->addAccount())
+                    if((new AccountServices(new Librarian()))->create())
                     {
                         echo "Librarian Added !",PHP_EOL;
                     }

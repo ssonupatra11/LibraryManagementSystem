@@ -2,8 +2,8 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UpdateUserAgeDao;
-use Sonu\LibraryManagementSystem\Model\classes\UpdateLibrarianAgeDao;
+use Sonu\LibraryManagementSystem\Model\DAO\LibrarianUpdateDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserUpdateDao;
 
 /**
  * This class has a functionality to take user input of age to upate age.
@@ -34,11 +34,11 @@ class UpdateAge{
         $this->user_type=$_SESSION['type'];
 
         if($this->user_type==='librarian'){
-            if((new UpdateLibrarianAgeDao)->updateAgeDao($this->new_age))
+            if(LibrarianUpdateDao::updateAgeDao($this->new_age))
                 return true;
         }
         else{
-            if((new UpdateUserAgeDao)->updateAgeDao($this->new_age))
+            if(UserUpdateDao::updateAgeDao($this->new_age))
                 return true;
         }
         return false;

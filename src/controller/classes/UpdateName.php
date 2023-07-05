@@ -2,8 +2,8 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UpdateUserNameDao;
-use Sonu\LibraryManagementSystem\Model\classes\UpdateLibrarianNameDao;
+use Sonu\LibraryManagementSystem\Model\DAO\LibrarianUpdateDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserUpdateDao;
 
 /**
  * This class has a functionality to take user input to update name.
@@ -35,11 +35,11 @@ class UpdateName{
         $this->user_type=$_SESSION['type'];
 
         if($this->user_type==='librarian'){
-            if((new UpdateLibrarianNameDao)->updateNameDao($this->new_name))
+            if(LibrarianUpdateDao::updateNameDao($this->new_name))
                 return true;
         }
         else{
-            if((new UpdateUserNameDao)->updateNameDao($this->new_name))
+            if(UserUpdateDao::updateNameDao($this->new_name))
                 return true;
         }
         return false;

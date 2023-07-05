@@ -2,7 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\RemoveBookDao;
+use Sonu\LibraryManagementSystem\Model\DAO\BookDao;
 
 /**
  * This class has a functionality to remove book from list.
@@ -25,7 +25,7 @@ class RemoveBook{
     {
 
         $this->book_id=(int)readline('Enter book id : ');
-        if((new RemoveBookDao)->removeBookDao($this->book_id))
+        if((new BookDao)->remove($this->book_id))
                 return true;
         return false;
     }

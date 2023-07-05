@@ -2,7 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UpdateBookNameDao;
+use Sonu\LibraryManagementSystem\Model\DAO\BookUpdateDao;
 
 /**
  * This class has a functionality to take user input of book name to update it.
@@ -34,7 +34,7 @@ class UpdateBookName{
 
         $this->book_id=(int)readline('Enter book id : ');
 
-        if((new UpdateBookNameDao)->updateBookNameDao($this->new_name,$this->book_id))
+        if(BookUpdateDao::updateBookNameDao($this->new_name,$this->book_id))
                 return true;
         return false;
     }

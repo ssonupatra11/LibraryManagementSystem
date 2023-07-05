@@ -2,7 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UpdateBookEditionDao;
+use Sonu\LibraryManagementSystem\Model\DAO\BookUpdateDao;
 
 /**
  * This class has a functionality to take user input of book edition to update it.
@@ -33,7 +33,7 @@ class UpdateBookEdition{
         
         $this->book_id=(int)readline('Enter book id : ');
 
-        if((new UpdateBookEditionDao)->updateBookEditionDao($this->new_edition,$this->book_id))
+        if(BookUpdateDao::updateBookEditionDao($this->new_edition,$this->book_id))
                 return true;
         return false;
     }

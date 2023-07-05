@@ -2,8 +2,8 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Controller\classes\User;
-use Sonu\LibraryManagementSystem\Controller\classes\Librarian;
+use Sonu\LibraryManagementSystem\Model\Data\Librarian;
+use Sonu\LibraryManagementSystem\Model\Data\User;
 
 /**
  * This class is example of factory design pattern, which creates objects.

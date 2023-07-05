@@ -2,8 +2,8 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UpdateUserPhoDao;
-use Sonu\LibraryManagementSystem\Model\classes\UpdateLibrarianPhoDao;
+use Sonu\LibraryManagementSystem\Model\DAO\LibrarianUpdateDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserUpdateDao;
 
 /**
  * This class has a functionality to take user input for adding new librarian.
@@ -35,11 +35,11 @@ class UpdatePhone{
         $this->user_type=$_SESSION['type'];
 
         if($this->user_type==='librarian'){
-            if((new UpdateLibrarianPhoDao)->updatePhoneDao($this->new_pho))
+            if(LibrarianUpdateDao::updatePhoneDao($this->new_pho))
                 return true;
         }
         else{
-            if((new UpdateUserPhoDao)->updatePhoneDao($this->new_pho))
+            if(UserUpdateDao::updatePhoneDao($this->new_pho))
                 return true;
         }
         return false;
