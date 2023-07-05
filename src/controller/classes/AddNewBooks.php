@@ -2,6 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
+use Sonu\LibraryManagementSystem\Controller\classes\Book;
 use Sonu\LibraryManagementSystem\Controller\Interfaces\CreateNewBook;
 
 /**
@@ -34,7 +35,7 @@ class AddNewBooks implements CreateNewBook{
         $this->book_obj->setQuantity((int)readline('Enter Book quantity : '));
 
         //If this condition is true then it returns true else false.
-        if($GLOBALS['createBookDao']->addNewBooks($this->book_obj))
+        if($GLOBALS['bookDao']->create($this->book_obj))
             return true;
         return false;
    

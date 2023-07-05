@@ -4,13 +4,11 @@ require("./vendor/autoload.php");
 
 use Sonu\LibraryManagementSystem\Controller\classes\UserObjectFactory;
 use Sonu\LibraryManagementSystem\View\HomeLibrary;
-use Sonu\LibraryManagementSystem\Model\classes\CreateBookDao;
+use Sonu\LibraryManagementSystem\Model\DAO\BookDao;
 use Sonu\LibraryManagementSystem\Controller\classes\ExitPage;
 use Sonu\LibraryManagementSystem\Controller\classes\AddNewBooks;
 use Sonu\LibraryManagementSystem\Controller\classes\BorrowBook;
 use Sonu\LibraryManagementSystem\Controller\classes\ReturnBook;
-use Sonu\LibraryManagementSystem\Controller\classes\AddNewLibrarian;
-use Sonu\LibraryManagementSystem\Controller\classes\AddNewUser;
 use Sonu\LibraryManagementSystem\Controller\classes\UserLogin;
 use Sonu\LibraryManagementSystem\Controller\classes\LibrarianLogin;
 use Sonu\LibraryManagementSystem\Controller\classes\RemoveAccount;
@@ -28,7 +26,7 @@ use Sonu\LibraryManagementSystem\Controller\classes\UpdateBookName;
 use Sonu\LibraryManagementSystem\Controller\classes\UpdateBookPublication;
 use Sonu\LibraryManagementSystem\Controller\classes\UpdateBookQuantity;
 use Sonu\LibraryManagementSystem\Controller\classes\ViewProfile;
-
+use Sonu\LibraryManagementSystem\Model\Data\AccountServices;
 
 /**
  * @global UserObjectFactory $GLOBALS['uof']
@@ -41,9 +39,9 @@ $GLOBALS['uof']=new UserObjectFactory();
 $GLOBALS['home']=new HomeLibrary();
 
 /**
- * @global CreateBookDao $GLOBALS['createBookDao']
+ * @global BookDao $GLOBALS['bookDao']
  */
-$GLOBALS['createBookDao']=new CreateBookDao();
+$GLOBALS['bookDao']=new BookDao();
 
 
 /**
@@ -65,16 +63,6 @@ $GLOBALS['borrow_book']=new BorrowBook();
  * @global ReturnBook $GLOBALS['return_book']
  */
 $GLOBALS['return_book']=new ReturnBook();
-
-/**
- * @global AddNewLibrarian $GLOBALS['new_librarian']
- */
-$GLOBALS['new_librarian']=new AddNewLibrarian();
-
-/**
- * @global AddNewUser $GLOBALS['new_user']
- */
-$GLOBALS['new_user']=new AddNewUser();
 
 /**
  * @global UserLogin $GLOBALS['user_login']

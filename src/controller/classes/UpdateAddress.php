@@ -2,8 +2,8 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UpdateUserAddrDao;
-use Sonu\LibraryManagementSystem\Model\classes\UpdateLibrarianAddrDao;
+use Sonu\LibraryManagementSystem\Model\DAO\LibrarianUpdateDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserUpdateDao;
 
 /**
  * This class has a functionality to take user input of address and update it.
@@ -35,11 +35,11 @@ class UpdateAddress{
         $this->user_type=$_SESSION['type'];
 
         if($this->user_type==='librarian'){
-            if((new UpdateLibrarianAddrDao)->updateAddressDao($this->new_addr))
+            if(LibrarianUpdateDao::updateAddressDao($this->new_addr))
                 return true;
         }
         else{
-            if((new UpdateUserAddrDao)->updateAddressDao($this->new_addr))
+            if(UserUpdateDao::updateAddressDao($this->new_addr))
                 return true;
         }
         return false;

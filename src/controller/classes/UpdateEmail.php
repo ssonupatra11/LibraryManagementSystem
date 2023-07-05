@@ -2,8 +2,8 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\UpdateUserEmailDao;
-use Sonu\LibraryManagementSystem\Model\classes\UpdateLibrarianEmailDao;
+use Sonu\LibraryManagementSystem\Model\DAO\LibrarianUpdateDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserUpdateDao;
 
 /**
  * This class has a functionality to take user input to update email.
@@ -36,11 +36,11 @@ class UpdateEmail{
         $this->user_type=$_SESSION['type'];
 
         if($this->user_type==='librarian'){
-            if((new UpdateLibrarianEmailDao)->updateEmailDao($this->new_email))
+            if(LibrarianUpdateDao::updateEmailDao($this->new_email))
                 return true;
         }
         else{
-            if((new UpdateUserEmailDao)->updateEmailDao($this->new_email))
+            if(UserUpdateDao::updateEmailDao($this->new_email))
                 return true;
         }
         return false;

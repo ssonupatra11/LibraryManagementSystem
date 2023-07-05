@@ -2,7 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\ShowBorrowedBooksDao;
+use Sonu\LibraryManagementSystem\Model\DAO\ShowBorrowedBooksDao;
 
 /**
  * This class has a functionality to get array and return it to print.

@@ -2,7 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\ReturnBookDao;
+use Sonu\LibraryManagementSystem\Model\DAO\BorrowBookDao;
 
 /**
  * This class has a functionality to take user input to return the borrowed book.
@@ -24,7 +24,7 @@ class ReturnBook{
     public function returnBook():bool{
 
         $this->book_id=(int)readline('Enter book id to return : ');
-        if((new ReturnBookDao)->returnBookDao($this->book_id))
+        if((new BorrowBookDao)->returnBookDao($this->book_id))
             return true;
 
         return false;

@@ -2,7 +2,7 @@
 
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
-use Sonu\LibraryManagementSystem\Model\classes\BorrowBookDao;
+use Sonu\LibraryManagementSystem\Model\DAO\BorrowBookDao;
 
 /**
  * This class has a functionality to take user input for borrowing book.

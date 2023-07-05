@@ -3,8 +3,8 @@
 namespace Sonu\LibraryManagementSystem\Controller\classes;
 
 use Sonu\LibraryManagementSystem\Controller\Interfaces\RemoveAccountInt;
-use Sonu\LibraryManagementSystem\Model\classes\RemoveLibAccDao;
-use Sonu\LibraryManagementSystem\Model\classes\RemoveUserAccDao;
+use Sonu\LibraryManagementSystem\Model\DAO\LibrarianDao;
+use Sonu\LibraryManagementSystem\Model\DAO\UserDao;
 
 /**
  * This class has a functionality to remove account.
@@ -37,11 +37,11 @@ class RemoveAccount implements RemoveAccountInt{
         $this->user_type=$_SESSION['type'];
 
         if($this->user_type==='librarian'){
-            if((new RemoveLibAccDao)->removeAccountDao($this->email))
+            if((new LibrarianDao)->remove($this->email))
                 return true;
         }
         else{
-            if((new RemoveUserAccDao)->removeAccountDao($this->email))
+            if((new UserDao)->remove($this->email))
                 return true;
         }
         return false;
